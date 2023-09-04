@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:study_app/routes.dart';
-import 'package:study_app/screens/onboarding/onboarding_screen.dart';
-import 'package:study_app/screens/register/register_screen.dart';
-
-import 'screens/set_target/set_target_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  SetTargetScreen(),
+      routes: AppRoutes.current,
     );
   }
 }

@@ -4,4 +4,6 @@ class ImageAssets {
 
   // icons
   static const email = 'assets/icons/email.svg';
+  static const sun = 'assets/icons/sun.svg';
+  static const moon = 'assets/icons/moon.svg';
 }
