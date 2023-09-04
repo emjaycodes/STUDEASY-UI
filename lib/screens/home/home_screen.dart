@@ -78,18 +78,36 @@ class HomeScreen extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  SizedBox(height: 22,),
+                  const SizedBox(height: 22,),
                   Text('UPCOMING ACTIVITIES', style: GoogleFonts.roboto(
                     fontWeight: FontWeight.w500,
                     fontSize: 10,
                     color: AppColor.gray,
                   ),),
-                  SizedBox(height: 31,),
+                  const SizedBox(height: 31,),
                   TaskTile(num: '01', status: 'COMPLETED', task: 'Focus Read 1', icon: SvgPicture.asset(ImageAssets.tick),),
                   TaskTile(num: '02', status: 'ONGOING', task: 'Focus Read 2', icon: SvgPicture.asset(ImageAssets.tick),),
-                  TaskTile(num: '03', status: 'NEXT- 1:30pm', task: 'Focus Read 3', icon: SvgPicture.asset(ImageAssets.bookmark),),
-                  TaskTile(num: '04', status: 'LATER - 3:30pm', task: 'Focus Read 4', icon: SvgPicture.asset(ImageAssets.bookmark),),
-                  TaskTile(num: '05', status: '6:00pm', task: 'Focus Read 5', icon: SvgPicture.asset(ImageAssets.bookmark),),
+                  TaskTile(num: '03', status: 'NEXT- 1:30pm', task: 'Focus Read 3', icon: Container(
+                    height: 20,
+                    width: 20,
+                    decoration: const BoxDecoration(shape: BoxShape.circle,
+                    color: AppColor.gray5
+                    ),
+                    child: Center(child: SvgPicture.asset(ImageAssets.bookmark))),),
+                  TaskTile(num: '04', status: 'LATER - 3:30pm', task: 'Focus Read 4', icon: Container(
+                    height: 20,
+                    width: 20,
+                    decoration: const BoxDecoration(shape: BoxShape.circle,
+                    color: AppColor.gray5
+                    ),
+                    child: Center(child: SvgPicture.asset(ImageAssets.bookmark))),),
+                  TaskTile(num: '05', status: '6:00pm', task: 'Focus Read 5', icon: Container(
+                    height: 20,
+                    width: 20,
+                    decoration: const BoxDecoration(shape: BoxShape.circle,
+                    color: AppColor.gray5
+                    ),
+                    child: Center(child: SvgPicture.asset(ImageAssets.bookmark))),),
                 ],
               )
             )
