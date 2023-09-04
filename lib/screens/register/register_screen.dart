@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:study_app/assets.dart';
 import 'package:study_app/screens/onboarding/onboarding_screen.dart';
 
-import '../../colors.dart';
-import '../../routes.dart';
+
+import '../../core/assets.dart';
+import '../../core/colors.dart';
+import '../../core/routes.dart';
+
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});

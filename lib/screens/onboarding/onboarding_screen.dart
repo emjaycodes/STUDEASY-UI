@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:study_app/assets.dart';
-import 'package:study_app/colors.dart';
-import 'package:study_app/routes.dart';
+
+
+import '../../core/assets.dart';
+import '../../core/colors.dart';
+import '../../core/routes.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -25,8 +27,7 @@ class OnboardingScreen extends StatelessWidget {
                 child: Text('SKIP', style: GoogleFonts.roboto(
                   fontSize: 12,
                   fontWeight: FontWeight.w400,
-                  height: 14.06,
-                  color: Colors.black
+                   color: Colors.black
                 ),),
               )
             ],

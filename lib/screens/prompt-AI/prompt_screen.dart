@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:study_app/assets.dart';
 import 'package:study_app/screens/onboarding/onboarding_screen.dart';
 
-import '../../colors.dart';
+
+import '../../core/assets.dart';
+import '../../core/colors.dart';
+import '../../core/routes.dart';
 
 class PromptScreen extends StatelessWidget {
   const PromptScreen({super.key});
@@ -78,12 +80,16 @@ class PromptScreen extends StatelessWidget {
               ),
             ],
           ),
-          Spacer(),
+          const Spacer(),
           Align(
             alignment: Alignment.bottomRight,
             child: Padding(
               padding: const EdgeInsets.only(right: 31, bottom: 33),
-              child:  CircularContainer(text: Text('START', style: GoogleFonts.roboto(
+              child:  CircularContainer(
+                onTap: (){
+                  Navigator.of(context).pushNamed(AppRoutes.home);
+                },
+                text: Text('START', style: GoogleFonts.roboto(
                 fontWeight: FontWeight.w500,
                 fontSize: 12,
                 color: Colors.white
@@ -108,9 +114,10 @@ class PromptContainer extends StatelessWidget {
     return Container(
       height: 186,
       width: 127,
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
         color: Colors.white,
-        boxShadow: [
+        boxShadow: const [
               BoxShadow(
                 color: Color(0xFFEDF5FF), // Shadow color
                 offset: Offset(0, 10), // X and Y offset

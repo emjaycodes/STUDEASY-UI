@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:study_app/screens/onboarding/onboarding_screen.dart';
 
-import '../../colors.dart';
-import '../../routes.dart';
+
+import '../../core/colors.dart';
+import '../../core/routes.dart';
+
 
 class SetTargetScreen extends StatefulWidget {
-  SetTargetScreen({super.key});
+  const SetTargetScreen({super.key});
 
   @override
   State<SetTargetScreen> createState() => _SetTargetScreenState();
