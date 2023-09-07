@@ -20,6 +20,6 @@ class AppRoutes {
     register: (context) => const RegisterScreen(),
     setTarget: (context) =>  const SetTargetScreen(),
     prompt: (context) => const PromptScreen(),
-    home: (context) => const HomeScreen(),
+    home: (context) =>  HomeScreen(),
   };
 }

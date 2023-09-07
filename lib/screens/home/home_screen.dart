@@ -5,11 +5,17 @@ import 'package:study_app/core/assets.dart';
 
 import '../../core/colors.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class HomeScreen extends StatefulWidget {
+   HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
   Widget build(BuildContext context) {
+    var _selectedIndex = 0;
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -114,6 +120,33 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        items: <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: SvgPicture.asset(
+            ImageAssets.home ),
+          label: 'Home',
+        ),
+        BottomNavigationBarItem(
+          icon: SvgPicture.asset(
+            ImageAssets.chart ),
+          label: 'chart',
+        ),
+        BottomNavigationBarItem(
+          icon: SvgPicture.asset(
+            ImageAssets.profile ),
+          label: 'Profile',
+        ),
+      ],
+      currentIndex: _selectedIndex,
+      // selectedIconTheme: theme.bottomNavigationBarTheme.selectedIconTheme,
+      onTap: (index) {
+        setState(() {
+          _selectedIndex = index;
+        });
+      },
+      ),
     );
   }
 }
@@ -129,22 +162,25 @@ class TaskTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 24, right: 29, bottom: 25),
+      padding: const EdgeInsets.only( right: 29, bottom: 25),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // circular number
-          Text(
-            num,
-            style: GoogleFonts.playfairDisplay(
-              fontWeight: FontWeight.w700,
-              fontSize: 28,
-              color: AppColor.softBlue,
+          Padding(
+            padding: const EdgeInsets.only(left: 24, right: 21),
+            child: Text(
+              num,
+              style: GoogleFonts.playfairDisplay(
+                fontWeight: FontWeight.w700,
+                fontSize: 28,
+                color: AppColor.softBlue,
+              ),
             ),
           ),
           // colomn with 2 items
           Padding(
-            padding: const EdgeInsets.only(left: 21, top: 15),
+            padding: const EdgeInsets.only(top: 15),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -162,9 +198,12 @@ class TaskTile extends StatelessWidget {
             ),
           ),
           //icon
-          Padding(
-            padding: const EdgeInsets.only(left: 80, top: 15),
-            child: icon,
+          const SizedBox(width: 80,),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: icon,
+            ),
           )
         ],
       ),

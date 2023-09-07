@@ -36,7 +36,7 @@ class OnboardingScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // image 
-              SvgPicture.asset(ImageAssets.laptopGuy),
+              Center(child: SvgPicture.asset(ImageAssets.laptopGuy)),
               const SizedBox(height: 20,),
             // big text 
             Text('Reading has never been more easier.',
