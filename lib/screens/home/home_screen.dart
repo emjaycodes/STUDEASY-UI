@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:study_app/core/assets.dart';
+import 'package:study_app/screens/home/home_screen_widgets/bottom_nav.dart';
 
 import '../../core/colors.dart';
+import 'home_screen_widgets/task_tile.dart';
 
 class HomeScreen extends StatefulWidget {
-   HomeScreen({super.key});
+  HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -15,7 +17,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    var _selectedIndex = 0;
+    
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -68,145 +70,89 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             // container with list
             Container(
-              height: 401,
-              width: 287,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-          color: Colors.white,
-          boxShadow: const [
-                BoxShadow(
-                  color: Color(0xFFEDF5FF), // Shadow color
-                  offset: Offset(0, 10), // X and Y offset
-                  blurRadius: 50, // Blur radius
-                  spreadRadius: 0,
-                )
-              ]
-              ),
-              child: Column(
-                children: [
-                  const SizedBox(height: 22,),
-                  Text('UPCOMING ACTIVITIES', style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 10,
-                    color: AppColor.gray,
-                  ),),
-                  const SizedBox(height: 31,),
-                  TaskTile(num: '01', status: 'COMPLETED', task: 'Focus Read 1', icon: SvgPicture.asset(ImageAssets.tick),),
-                  TaskTile(num: '02', status: 'ONGOING', task: 'Focus Read 2', icon: SvgPicture.asset(ImageAssets.tick),),
-                  TaskTile(num: '03', status: 'NEXT- 1:30pm', task: 'Focus Read 3', icon: Container(
-                    height: 20,
-                    width: 20,
-                    decoration: const BoxDecoration(shape: BoxShape.circle,
-                    color: AppColor.gray5
+                height: 401,
+                width: 287,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Color(0xFFEDF5FF), // Shadow color
+                        offset: Offset(0, 10), // X and Y offset
+                        blurRadius: 50, // Blur radius
+                        spreadRadius: 0,
+                      )
+                    ]),
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 22,
                     ),
-                    child: Center(child: SvgPicture.asset(ImageAssets.bookmark))),),
-                  TaskTile(num: '04', status: 'LATER - 3:30pm', task: 'Focus Read 4', icon: Container(
-                    height: 20,
-                    width: 20,
-                    decoration: const BoxDecoration(shape: BoxShape.circle,
-                    color: AppColor.gray5
+                    Text(
+                      'UPCOMING ACTIVITIES',
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 10,
+                        color: AppColor.gray,
+                      ),
                     ),
-                    child: Center(child: SvgPicture.asset(ImageAssets.bookmark))),),
-                  TaskTile(num: '05', status: '6:00pm', task: 'Focus Read 5', icon: Container(
-                    height: 20,
-                    width: 20,
-                    decoration: const BoxDecoration(shape: BoxShape.circle,
-                    color: AppColor.gray5
+                    const SizedBox(
+                      height: 31,
                     ),
-                    child: Center(child: SvgPicture.asset(ImageAssets.bookmark))),),
-                ],
-              )
-            )
+                    TaskTile(
+                      num: '01',
+                      status: 'COMPLETED',
+                      task: 'Focus Read 1',
+                      icon: SvgPicture.asset(ImageAssets.tick),
+                    ),
+                    TaskTile(
+                      num: '02',
+                      status: 'ONGOING',
+                      task: 'Focus Read 2',
+                      icon: SvgPicture.asset(ImageAssets.tick),
+                    ),
+                    TaskTile(
+                      num: '03',
+                      status: 'NEXT- 1:30pm',
+                      task: 'Focus Read 3',
+                      icon: Container(
+                          height: 20,
+                          width: 20,
+                          decoration: const BoxDecoration(
+                              shape: BoxShape.circle, color: AppColor.gray5),
+                          child: Center(
+                              child: SvgPicture.asset(ImageAssets.bookmark))),
+                    ),
+                    TaskTile(
+                      num: '04',
+                      status: 'LATER - 3:30pm',
+                      task: 'Focus Read 4',
+                      icon: Container(
+                          height: 20,
+                          width: 20,
+                          decoration: const BoxDecoration(
+                              shape: BoxShape.circle, color: AppColor.gray5),
+                          child: Center(
+                              child: SvgPicture.asset(ImageAssets.bookmark))),
+                    ),
+                    TaskTile(
+                      num: '05',
+                      status: '6:00pm',
+                      task: 'Focus Read 5',
+                      icon: Container(
+                          height: 20,
+                          width: 20,
+                          decoration: const BoxDecoration(
+                              shape: BoxShape.circle, color: AppColor.gray5),
+                          child: Center(
+                              child: SvgPicture.asset(ImageAssets.bookmark))),
+                    ),
+                  ],
+                ))
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset(
-            ImageAssets.home ),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset(
-            ImageAssets.chart ),
-          label: 'chart',
-        ),
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset(
-            ImageAssets.profile ),
-          label: 'Profile',
-        ),
-      ],
-      currentIndex: _selectedIndex,
-      // selectedIconTheme: theme.bottomNavigationBarTheme.selectedIconTheme,
-      onTap: (index) {
-        setState(() {
-          _selectedIndex = index;
-        });
-      },
-      ),
-    );
-  }
-}
-
-class TaskTile extends StatelessWidget {
-  const TaskTile({
-    super.key, required this.num, required this.status, required this.icon, required this.task,
-  });
-   final String num;
-   final String status;
-  final String task;
-   final Widget icon;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only( right: 29, bottom: 25),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // circular number
-          Padding(
-            padding: const EdgeInsets.only(left: 24, right: 21),
-            child: Text(
-              num,
-              style: GoogleFonts.playfairDisplay(
-                fontWeight: FontWeight.w700,
-                fontSize: 28,
-                color: AppColor.softBlue,
-              ),
-            ),
-          ),
-          // colomn with 2 items
-          Padding(
-            padding: const EdgeInsets.only(top: 15),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(status, style: GoogleFonts.roboto(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 6,
-                  color: AppColor.gray
-                ),),
-                Text(task, style: GoogleFonts.roboto(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 12,
-                  color: AppColor.gray
-                ),)
-              ],
-            ),
-          ),
-          //icon
-          const SizedBox(width: 80,),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: icon,
-            ),
-          )
-        ],
-      ),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }
