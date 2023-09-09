@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../core/assets.dart';
 import '../../core/colors.dart';
 import '../../core/routes.dart';
+import '../../core/widgets/circular_container.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -80,26 +81,3 @@ class OnboardingScreen extends StatelessWidget {
   }
 }
 
-class CircularContainer extends StatelessWidget {
-  const CircularContainer({
-    super.key, required this.text, required this.color, this.onTap,
-  });
-  final Text text;
-  final Color color;
-  final void Function()? onTap;
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        height: 70,
-        width: 70,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: color
-        ),
-        child: Center(child: text),
-      ),
-    );
-  }
-}

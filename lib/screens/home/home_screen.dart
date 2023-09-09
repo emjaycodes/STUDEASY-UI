@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:study_app/core/assets.dart';
-import 'package:study_app/screens/home/home_screen_widgets/bottom_nav.dart';
+import 'package:study_app/core/widgets/bottom_nav.dart';
 
 import '../../core/colors.dart';
-import 'home_screen_widgets/task_tile.dart';
+import '../../core/widgets/task_tile.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});

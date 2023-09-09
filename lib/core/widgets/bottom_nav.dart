@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../core/assets.dart';
-import '../../../core/colors.dart';
+import '../assets.dart';
+import '../colors.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});

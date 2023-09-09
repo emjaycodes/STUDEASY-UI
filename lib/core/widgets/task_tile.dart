@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../core/colors.dart';
+import '../colors.dart';
 
 class TaskTile extends StatelessWidget {
   const TaskTile({

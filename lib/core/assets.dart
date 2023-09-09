@@ -1,6 +1,7 @@
 class ImageAssets {
   static const laptopGuy = 'assets/images/guywithlaptop.svg';
   static const girl = 'assets/images/girl.svg';
+  static const cupGuy = 'assets/images/guywithcup.svg';
 
   // icons
   static const email = 'assets/icons/email.svg';

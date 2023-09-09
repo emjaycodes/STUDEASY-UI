@@ -7,6 +7,7 @@ import 'package:study_app/screens/onboarding/onboarding_screen.dart';
 import '../../core/assets.dart';
 import '../../core/colors.dart';
 import '../../core/routes.dart';
+import '../../core/widgets/circular_container.dart';
 
 class PromptScreen extends StatelessWidget {
   const PromptScreen({super.key});

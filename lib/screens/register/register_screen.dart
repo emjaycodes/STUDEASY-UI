@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:study_app/screens/onboarding/onboarding_screen.dart';
 
 
 import '../../core/assets.dart';
 import '../../core/colors.dart';
 import '../../core/routes.dart';
+import '../../core/widgets/circular_container.dart';
+import '../../core/widgets/textfield.dart';
 
 
 class RegisterScreen extends StatelessWidget {
@@ -36,7 +37,7 @@ class RegisterScreen extends StatelessWidget {
             child: SvgPicture.asset(ImageAssets.girl),
           )),
           // big text
-          SizedBox(
+          const SizedBox(
             height: 7,
           ),
           Text(
@@ -46,7 +47,7 @@ class RegisterScreen extends StatelessWidget {
                 fontWeight: FontWeight.w700, fontSize: 24),
           ),
 
-          SizedBox(
+          const SizedBox(
             height: 7,
           ),
           // small text
@@ -64,8 +65,8 @@ class RegisterScreen extends StatelessWidget {
               ImageAssets.email,
             ),
           ),
-          CustomTextfield(text: 'Email', icon: Icon(Icons.email_outlined)),
-          SizedBox(
+          const CustomTextfield(text: 'Email', icon: Icon(Icons.email_outlined)),
+          const SizedBox(
             height: 20,
           ),
           Align(
@@ -90,24 +91,3 @@ class RegisterScreen extends StatelessWidget {
   }
 }
 
-class CustomTextfield extends StatelessWidget {
-  const CustomTextfield({
-    super.key,
-    required this.text,
-    required this.icon,
-  });
-  final String text;
-  final Widget icon;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 48, right: 47),
-      child: TextFormField(
-        decoration: InputDecoration(
-            hintText: text,
-            suffixIcon:
-                Padding(padding: const EdgeInsets.all(15), child: icon)),
-      ),
-    );
-  }
-}
